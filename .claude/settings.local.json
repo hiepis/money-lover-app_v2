@@ -6,7 +6,12 @@
       "Bash(gh issue create:*)",
       "Bash(mkdir:*)",
       "Bash(gh issue edit:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gh issue view:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)"
     ],
     "deny": []
   }
