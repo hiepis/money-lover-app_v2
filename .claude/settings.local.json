@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh milestone create:*)",
+      "Bash(gh api:*)",
+      "Bash(gh issue create:*)",
+      "Bash(mkdir:*)",
+      "Bash(gh issue edit:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": []
+  }
+}
