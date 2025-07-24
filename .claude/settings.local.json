@@ -13,7 +13,10 @@
       "Bash(node:*)",
       "Bash(npm:*)",
       "Bash(code --version)",
-      "Bash(code:*)"
+      "Bash(code:*)",
+      "Bash(gh issue list:*)",
+      "Bash(gh issue close:*)",
+      "Bash(timeout 10s npm run preview)"
     ],
     "deny": []
   }
