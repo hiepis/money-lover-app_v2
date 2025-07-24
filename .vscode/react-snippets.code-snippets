@@ -1,0 +1,134 @@
+{
+  "Functional Component": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "const ${1:ComponentName} = () => {",
+      "  return (",
+      "    <div className=\"${2:container}\">",
+      "      $0",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "Create a React functional component"
+  },
+  "Functional Component with Props": {
+    "prefix": "rfcp",
+    "body": [
+      "import React from 'react';",
+      "",
+      "interface ${1:ComponentName}Props {",
+      "  $2",
+      "}",
+      "",
+      "const ${1:ComponentName}: React.FC<${1:ComponentName}Props> = ({ $3 }) => {",
+      "  return (",
+      "    <div className=\"${4:container}\">",
+      "      $0",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "Create a React functional component with props interface"
+  },
+  "useState Hook": {
+    "prefix": "us",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState($2);"
+    ],
+    "description": "Create useState hook"
+  },
+  "useEffect Hook": {
+    "prefix": "ue",
+    "body": [
+      "useEffect(() => {",
+      "  $1",
+      "}, [$2]);"
+    ],
+    "description": "Create useEffect hook"
+  },
+  "Custom Hook": {
+    "prefix": "rch",
+    "body": [
+      "import { useState, useEffect } from 'react';",
+      "",
+      "const use${1:HookName} = ($2) => {",
+      "  const [${3:state}, set${3/(.*)/${3:/capitalize}/}] = useState($4);",
+      "",
+      "  useEffect(() => {",
+      "    $5",
+      "  }, [$6]);",
+      "",
+      "  return { ${3:state}, set${3/(.*)/${3:/capitalize}/} };",
+      "};",
+      "",
+      "export default use${1:HookName};"
+    ],
+    "description": "Create a custom React hook"
+  },
+  "Expense Item Component": {
+    "prefix": "expense-component",
+    "body": [
+      "import React from 'react';",
+      "",
+      "interface ExpenseItemProps {",
+      "  id: string;",
+      "  amount: number;",
+      "  description: string;",
+      "  category: string;",
+      "  date: string;",
+      "  onEdit?: (id: string) => void;",
+      "  onDelete?: (id: string) => void;",
+      "}",
+      "",
+      "const ExpenseItem: React.FC<ExpenseItemProps> = ({",
+      "  id,",
+      "  amount,",
+      "  description,",
+      "  category,",
+      "  date,",
+      "  onEdit,",
+      "  onDelete",
+      "}) => {",
+      "  return (",
+      "    <div className=\"expense-item p-4 border rounded-lg bg-white shadow-sm\">",
+      "      <div className=\"flex justify-between items-center\">",
+      "        <div>",
+      "          <h3 className=\"font-semibold\">{description}</h3>",
+      "          <p className=\"text-sm text-gray-600\">{category} • {date}</p>",
+      "        </div>",
+      "        <div className=\"flex items-center gap-2\">",
+      "          <span className=\"font-bold text-lg\">${amount.toFixed(2)}</span>",
+      "          {onEdit && (",
+      "            <button",
+      "              onClick={() => onEdit(id)}",
+      "              className=\"text-blue-600 hover:text-blue-800\"",
+      "            >",
+      "              Edit",
+      "            </button>",
+      "          )}",
+      "          {onDelete && (",
+      "            <button",
+      "              onClick={() => onDelete(id)}",
+      "              className=\"text-red-600 hover:text-red-800\"",
+      "            >",
+      "              Delete",
+      "            </button>",
+      "          )}",
+      "        </div>",
+      "      </div>",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ExpenseItem;"
+    ],
+    "description": "Create an expense item component for the expense tracker"
+  }
+}
