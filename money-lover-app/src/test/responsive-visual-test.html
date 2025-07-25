@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Lover - Responsive Visual Testing</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .test-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .viewport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .viewport-test {
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+        
+        .viewport-header {
+            background: #2563eb;
+            color: white;
+            padding: 10px 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .viewport-content {
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .viewport-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            transform-origin: top left;
+        }
+        
+        /* Mobile viewport */
+        .mobile-frame {
+            width: 375px;
+            height: 667px;
+            transform: scale(0.45);
+        }
+        
+        /* Tablet viewport */
+        .tablet-frame {
+            width: 768px;
+            height: 1024px;
+            transform: scale(0.35);
+        }
+        
+        /* Desktop viewport */
+        .desktop-frame {
+            width: 1200px;
+            height: 800px;
+            transform: scale(0.3);
+        }
+        
+        .breakpoint-info {
+            background: #f3f4f6;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 6px;
+            border-left: 4px solid #2563eb;
+        }
+        
+        .test-instructions {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .test-checklist {
+            background: #fefce8;
+            border: 1px solid #fde047;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .checklist-item {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .checklist-item input {
+            margin-right: 8px;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-pass { background: #22c55e; }
+        .status-fail { background: #ef4444; }
+        .status-pending { background: #f59e0b; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>🧪 Money Lover - Responsive Behavior Visual Testing</h1>
+            <p>Manual testing interface for validating responsive behavior across different viewport sizes</p>
+            <p><strong>App URL:</strong> <a href="http://localhost:5174" target="_blank">http://localhost:5174</a></p>
+        </div>
+
+        <div class="test-instructions">
+            <h3>📋 Testing Instructions</h3>
+            <ol>
+                <li>Ensure the Money Lover app is running at <code>http://localhost:5174</code></li>
+                <li>Use browser developer tools to test different viewport sizes</li>
+                <li>Check each viewport frame below for layout issues</li>
+                <li>Mark off completed tests in the checklist</li>
+                <li>Document any issues found</li>
+            </ol>
+        </div>
+
+        <div class="breakpoint-info">
+            <h3>📱 Tailwind CSS Breakpoints</h3>
+            <ul>
+                <li><strong>Mobile (xs):</strong> 320px+ (default, no prefix)</li>
+                <li><strong>Small Mobile (sm):</strong> 640px+ (sm: prefix)</li>
+                <li><strong>Tablet (md):</strong> 768px+ (md: prefix)</li>
+                <li><strong>Desktop (lg):</strong> 1024px+ (lg: prefix)</li>
+                <li><strong>Large Desktop (xl):</strong> 1280px+ (xl: prefix)</li>
+            </ul>
+        </div>
+
+        <div class="viewport-grid">
+            <div class="viewport-test">
+                <div class="viewport-header">
+                    📱 Mobile (375×667)
+                </div>
+                <div class="viewport-content">
+                    <iframe 
+                        src="http://localhost:5174" 
+                        class="viewport-frame mobile-frame"
+                        title="Mobile Viewport Test">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="viewport-test">
+                <div class="viewport-header">
+                    📱 Tablet (768×1024)
+                </div>
+                <div class="viewport-content">
+                    <iframe 
+                        src="http://localhost:5174" 
+                        class="viewport-frame tablet-frame"
+                        title="Tablet Viewport Test">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="viewport-test">
+                <div class="viewport-header">
+                    💻 Desktop (1200×800)
+                </div>
+                <div class="viewport-content">
+                    <iframe 
+                        src="http://localhost:5174" 
+                        class="viewport-frame desktop-frame"
+                        title="Desktop Viewport Test">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-checklist">
+            <h3>✅ Responsive Testing Checklist</h3>
+            
+            <h4>Layout Components</h4>
+            <div class="checklist-item">
+                <input type="checkbox" id="header-mobile">
+                <label for="header-mobile">Header displays properly on mobile (logo + daily total)</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="header-tablet">
+                <label for="header-tablet">Header scales appropriately on tablet</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="header-desktop">
+                <label for="header-desktop">Header shows full content on desktop</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="nav-mobile">
+                <label for="nav-mobile">Bottom navigation is touch-friendly on mobile</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="nav-tablet">
+                <label for="nav-tablet">Navigation maintains proper spacing on tablet</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="nav-desktop">
+                <label for="nav-desktop">Navigation works efficiently on desktop</label>
+            </div>
+
+            <h4>Form Components</h4>
+            <div class="checklist-item">
+                <input type="checkbox" id="form-mobile">
+                <label for="form-mobile">ExpenseForm optimized for mobile 10-second entry</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="amount-mobile">
+                <label for="amount-mobile">AmountInput triggers numeric keypad on mobile</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="categories-mobile">
+                <label for="categories-mobile">Category buttons are touch-friendly (44px+ targets)</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="form-tablet">
+                <label for="form-tablet">Form layout uses tablet space efficiently</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="form-desktop">
+                <label for="form-desktop">Form is properly centered and sized on desktop</label>
+            </div>
+
+            <h4>UI Components</h4>
+            <div class="checklist-item">
+                <input type="checkbox" id="buttons-mobile">
+                <label for="buttons-mobile">All buttons meet minimum touch target size (44px)</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="buttons-hover">
+                <label for="buttons-hover">Button hover states work on desktop</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="modal-mobile">
+                <label for="modal-mobile">Modals take appropriate width on mobile</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="modal-desktop">
+                <label for="modal-desktop">Modals are properly sized and centered on desktop</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loading-responsive">
+                <label for="loading-responsive">Loading states scale appropriately across devices</label>
+            </div>
+
+            <h4>Content & Typography</h4>
+            <div class="checklist-item">
+                <input type="checkbox" id="text-mobile">
+                <label for="text-mobile">Text is readable and appropriately sized on mobile</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="text-desktop">
+                <label for="text-desktop">Typography scales up appropriately on larger screens</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="content-overflow">
+                <label for="content-overflow">Long content scrolls properly without layout breaks</label>
+            </div>
+
+            <h4>Accessibility & Usability</h4>
+            <div class="checklist-item">
+                <input type="checkbox" id="touch-targets">
+                <label for="touch-targets">All interactive elements meet touch accessibility guidelines</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="focus-visible">
+                <label for="focus-visible">Focus indicators are visible and properly sized</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="orientation">
+                <label for="orientation">App works in both portrait and landscape orientations</label>
+            </div>
+        </div>
+
+        <div class="breakpoint-info">
+            <h3>🔧 Developer Tools Testing</h3>
+            <p>Use these specific viewport sizes in browser developer tools:</p>
+            <ul>
+                <li><strong>iPhone SE:</strong> 375×667</li>
+                <li><strong>iPhone 12:</strong> 390×844</li>
+                <li><strong>iPad:</strong> 768×1024</li>
+                <li><strong>iPad Pro:</strong> 1024×1366</li>
+                <li><strong>Desktop:</strong> 1440×900</li>
+                <li><strong>Large Desktop:</strong> 1920×1080</li>
+            </ul>
+        </div>
+
+        <div class="test-instructions">
+            <h3>📝 Issue Documentation</h3>
+            <textarea 
+                style="width: 100%; height: 120px; padding: 10px; border: 1px solid #d1d5db; border-radius: 4px;"
+                placeholder="Document any responsive behavior issues found during testing...">
+            </textarea>
+        </div>
+    </div>
+
+    <script>
+        // Auto-save checklist state
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            // Load saved state
+            const saved = localStorage.getItem(checkbox.id);
+            if (saved === 'true') {
+                checkbox.checked = true;
+            }
+            
+            // Save state on change
+            checkbox.addEventListener('change', () => {
+                localStorage.setItem(checkbox.id, checkbox.checked);
+            });
+        });
+
+        // Auto-refresh frames every 30 seconds to keep them current
+        setInterval(() => {
+            document.querySelectorAll('iframe').forEach(frame => {
+                frame.src = frame.src;
+            });
+        }, 30000);
+    </script>
+</body>
+</html>

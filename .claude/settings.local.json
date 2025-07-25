@@ -16,7 +16,12 @@
       "Bash(code:*)",
       "Bash(gh issue list:*)",
       "Bash(gh issue close:*)",
-      "Bash(timeout 10s npm run preview)"
+      "Bash(timeout 10s npm run preview)",
+      "Bash(gh issue comment:*)",
+      "WebFetch(domain:tailwindcss.com)",
+      "Bash(timeout 5s npm run dev)",
+      "Bash(curl:*)",
+      "Bash(start \"D:\\Moneylover_ver2\\money-lover-app\\src\\test\\responsive-visual-test.html\")"
     ],
     "deny": []
   }
