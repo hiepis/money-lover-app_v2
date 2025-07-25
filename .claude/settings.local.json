@@ -21,7 +21,9 @@
       "WebFetch(domain:tailwindcss.com)",
       "Bash(timeout 5s npm run dev)",
       "Bash(curl:*)",
-      "Bash(start \"D:\\Moneylover_ver2\\money-lover-app\\src\\test\\responsive-visual-test.html\")"
+      "Bash(start \"D:\\Moneylover_ver2\\money-lover-app\\src\\test\\responsive-visual-test.html\")",
+      "Bash(gh label:*)",
+      "Bash(cp:*)"
     ],
     "deny": []
   }
